@@ -13,9 +13,25 @@
     </header>
 
     <main id="game-catalog">
-        <!-- Kartu Game akan dimuat di sini oleh JavaScript -->
         <h2>Memuat Daftar Game...</h2>
     </main>
+    
+    <!-- Modal (Pop-up Detail Game) - Ditambahkan di Tahap 4.1 -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <img src="" id="modalCover" style="max-width: 100%; height: auto; margin-bottom: 1rem;">
+            <p><strong>Tanggal Rilis:</strong> <span id="modalReleaseDate"></span></p>
+            <p><strong>Ukuran:</strong> <span id="modalSize"></span> GB</p>
+            <p><strong>Bahasa:</strong> <span id="modalLanguage"></span></p>
+            <p><strong>Genre:</strong> <span id="modalGenre"></span></p>
+            <p><strong>Deskripsi:</strong> <span id="modalDescription"></span></p>
+            <h4>Screenshots:</h4>
+            <div id="modalScreenshots" style="display: flex; gap: 10px; overflow-x: auto;"></div>
+            <button onclick="orderGame()">Pesan Game Ini</button>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 Kharui Store</p>
