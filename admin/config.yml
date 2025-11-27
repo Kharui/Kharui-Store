@@ -1,45 +1,47 @@
 backend:
   name: git-gateway
-  # repo: kharui/Kharui-Store # Dihapus/diberi komentar karena Netlify Git Gateway otomatis mendeteksi
-  branch: main 
+  # Hapus 'repo' jika Anda menggunakan Netlify Identity/Git Gateway.
+  # Netlify akan mengambil repo dari koneksi yang ada.
+  # repo: kharui/Kharui-Store 
+  branch: main # Pastikan ini adalah cabang utama Anda (main/master)
 
 media_folder: "assets/images" # Folder untuk gambar game
 public_folder: "/assets/images"
 
+# --- KOREKSI KRITIS PADA STRUKTUR COLLECTIONS ---
 collections:
-  - name: 'games' 
+  - name: 'games' # Nama Internal Koleksi
     label: 'Katalog Game'
+    # Menggunakan 'files' karena Anda mengedit SATU file JSON
     files:
       - file: 'games.json' # Path menuju file di ROOT REPOSITORI
         label: 'Daftar Game'
-        name: 'game_data'
+        name: 'game_data' # Nama field array utama di games.json (Kita akan menggunakan 'game_data')
         fields:
           # --- ARRAY UTAMA (LIST WIDGET) YANG AKAN MENYIMPAN SEMUA ENTRI ---
           - label: "Daftar Game"
-            name: "entries"
+            name: "entries" # Nama array yang akan kita iterasi di script.js (misalnya: data.entries)
             widget: "list"
-            allow_add: true 
+            allow_add: true # Izinkan penambahan game baru
             fields:
               # --- DEFINISI FIELD UNTUK SATU GAME ---
+              - label: "ID Game (Harus Unik)"
+                name: "id"
+                widget: "number"
+                value_key: "id"
+                required: true
               - label: "Judul"
                 name: "title"
                 widget: "string"
                 required: true
-              
-              # --- FIELD UKURAN BARU (Full dan RIP) ---
-              - label: "Ukuran Full Version (GB)"
-                name: "size_full"
+              - label: "Ukuran (GB)"
+                name: "sizeGB"
                 widget: "number"
                 step: 0.1
-                required: true 
-
-              - label: "Ukuran RIP/Compressed (GB)"
-                name: "size_rip"
-                widget: "number"
-                step: 0.1
-                required: false # RIP boleh kosong
-              # --- END UKURAN BARU ---
-
+                required: true
+              - label: "Tanggal Rilis"
+                name: "releaseDate"
+                widget: "date"
               - label: "Bahasa"
                 name: "language"
                 widget: "string"
