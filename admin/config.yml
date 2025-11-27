@@ -3,11 +3,8 @@ backend:
   repo: Kharui/Kharui-Store # Pastikan ini sesuai dengan nama repositori Anda
   branch: main
   client_id: Ov23liAfQyI9r84TZfOE # Client ID Anda
-  
-  # SOLUSI LOGIN LOOP: Tentukan URL otentikasi secara eksplisit
-  base_url: https://api.github.com
-  auth_url: https://kharui-store.pages.dev/auth/ # URL callback Decap CMS
-  
+  # HAPUS BARIS 'base_url' DAN 'auth_url'
+
 media_folder: "assets/images"
 public_folder: "/assets/images"
 
@@ -29,14 +26,12 @@ collections:
                 widget: "string"
                 required: true
               
-              # Field Ukuran Baru (Full Version)
               - label: "Ukuran Full Version (GB)"
                 name: "size_full"
                 widget: "number"
                 step: 0.1
                 required: true 
 
-              # Field Ukuran Baru (RIP/Compressed)
               - label: "Ukuran RIP/Compressed (GB)"
                 name: "size_rip"
                 widget: "number"
