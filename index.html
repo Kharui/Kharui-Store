@@ -5,32 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kharui Store - Katalog Game</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    </head>
 <body>
     <header>
         <h1>Kharui Store</h1>
         <p>Katalog Game dan Pemesanan Flashdisk</p>
     </header>
 
+    <aside id="cart-sidebar">
+        <h2>Keranjang Belanja</h2>
+        
+        <label for="flashdisk-size">Pilih Ukuran Flashdisk:</label>
+        <select id="flashdisk-size">
+            <option value="0">Pilih...</option>
+            <option value="64">64 GB</option>
+            <option value="128">128 GB</option>
+            <option value="256">256 GB</option>
+            <option option value="512">512 GB</option>
+        </select>
+        
+        <p>Total Game: <span id="cart-count">0</span></p>
+        <p>Total Ukuran: <span id="total-size">0.0</span> GB</p>
+        <p>Kapasitas Tersisa: <span id="remaining-capacity">0.0</span> GB</p>
+
+        <ul id="cart-list">
+            <li>Keranjang kosong.</li>
+        </ul>
+        
+        <button id="checkout-button" disabled>Lanjutkan Pemesanan</button>
+    </aside>
+
     <main id="game-catalog">
         <h2>Memuat Daftar Game...</h2>
     </main>
     
-    <!-- Modal (Pop-up Detail Game) - Ditambahkan di Tahap 4.1 -->
     <div id="gameModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <h2 id="modalTitle"></h2>
             <img src="" id="modalCover" style="max-width: 100%; height: auto; margin-bottom: 1rem;">
-            <p><strong>Tanggal Rilis:</strong> <span id="modalReleaseDate"></span></p>
-            <p><strong>Ukuran:</strong> <span id="modalSize"></span> GB</p>
+            
+            <p><strong>Ukuran Full:</strong> <span id="modalSizeFull"></span> GB</p>
+            <p><strong>Ukuran RIP:</strong> <span id="modalSizeRip"></span></p>
+
             <p><strong>Bahasa:</strong> <span id="modalLanguage"></span></p>
             <p><strong>Genre:</strong> <span id="modalGenre"></span></p>
             <p><strong>Deskripsi:</strong> <span id="modalDescription"></span></p>
+            
             <h4>Screenshots:</h4>
             <div id="modalScreenshots" style="display: flex; gap: 10px; overflow-x: auto;"></div>
-            <button onclick="orderGame()">Pesan Game Ini</button>
-        </div>
+            
+            <button class="modal-add-to-cart">Tambahkan ke Keranjang</button> 
+            </div>
     </div>
 
     <footer>
@@ -38,7 +64,5 @@
     </footer>
 
     <script src="script.js"></script>
-</body>
-</html>
 </body>
 </html>
