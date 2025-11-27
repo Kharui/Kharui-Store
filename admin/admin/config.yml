@@ -1,0 +1,55 @@
+backend:
+  name: github
+  repo: kharui/Kharui-Store # GANTI DENGAN USERNAME GITHUB ANDA
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "games"
+    label: "Katalog Game"
+    folder: "/"
+    create: false
+    files:
+      - file: "games.json"
+        label: "Daftar Game"
+        name: "items"
+        fields:
+          - label: "Daftar Game"
+            name: "items"
+            widget: "list"
+            fields:
+              - label: "ID Game (Harus Unik)"
+                name: "id"
+                widget: "number"
+              - label: "Judul"
+                name: "title"
+                widget: "string"
+              - label: "Ukuran (GB)"
+                name: "sizeGB"
+                widget: "number"
+                step: 0.1
+              - label: "Tanggal Rilis"
+                name: "releaseDate"
+                widget: "date"
+              - label: "Bahasa"
+                name: "language"
+                widget: "string"
+              - label: "Genre/Tagging"
+                name: "genre"
+                widget: "string"
+              - label: "Deskripsi"
+                name: "description"
+                widget: "text"
+              - label: "Gambar Cover"
+                name: "coverImage"
+                widget: "image"
+                required: false
+              - label: "Screenshots Gameplay"
+                name: "screenshots"
+                widget: "list"
+                field: 
+                  label: "Screenshot"
+                  name: "screenshot_image"
+                  widget: "image"
