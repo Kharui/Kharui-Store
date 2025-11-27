@@ -1,24 +1,3 @@
-[
-  {
-    "id": 1,
-    "title": "Stardew Valley",
-    "sizeGB": 0.5,
-    "releaseDate": "2016-02-26",
-    "language": "Multi (Termasuk Indonesia)",
-    "genre": "RPG, Simulasi",
-    "description": "Hidup baru di pedesaan! Anda mewarisi lahan pertanian tua kakek Anda di Lembah Stardew...",
-    "coverImage": "",
-    "screenshots": []
-  },
-  {
-    "id": 2,
-    "title": "Minecraft Java Edition",
-    "sizeGB": 1.0,
-    "releaseDate": "2011-11-18",
-    "language": "Multi (Termasuk Indonesia)",
-    "genre": "Sandbox, Survival",
-    "description": "Jelajahi dunia tanpa batas dan bangun apa pun dari rumah paling sederhana hingga kastil termegah.",
-    "coverImage": "",
-    "screenshots": []
-  }
-]
+{
+  "entries": []
+}
