@@ -1,22 +1,43 @@
-fields:
+backend:
+  name: git-gateway
+  # repo: kharui/Kharui-Store # Dihapus/diberi komentar karena Netlify Git Gateway otomatis mendeteksi
+  branch: main 
+
+media_folder: "assets/images" # Folder untuk gambar game
+public_folder: "/assets/images"
+
+collections:
+  - name: 'games' 
+    label: 'Katalog Game'
+    files:
+      - file: 'games.json' # Path menuju file di ROOT REPOSITORI
+        label: 'Daftar Game'
+        name: 'game_data'
+        fields:
+          # --- ARRAY UTAMA (LIST WIDGET) YANG AKAN MENYIMPAN SEMUA ENTRI ---
+          - label: "Daftar Game"
+            name: "entries"
+            widget: "list"
+            allow_add: true 
+            fields:
               # --- DEFINISI FIELD UNTUK SATU GAME ---
               - label: "Judul"
                 name: "title"
                 widget: "string"
                 required: true
               
-              # --- FIELD UKURAN BARU ---
+              # --- FIELD UKURAN BARU (Full dan RIP) ---
               - label: "Ukuran Full Version (GB)"
                 name: "size_full"
                 widget: "number"
                 step: 0.1
-                required: true # Wajib diisi
+                required: true 
 
               - label: "Ukuran RIP/Compressed (GB)"
                 name: "size_rip"
                 widget: "number"
                 step: 0.1
-                required: false # Boleh kosong
+                required: false # RIP boleh kosong
               # --- END UKURAN BARU ---
 
               - label: "Bahasa"
