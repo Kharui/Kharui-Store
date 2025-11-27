@@ -2,7 +2,7 @@ backend:
   name: github
   repo: Kharui/Kharui-Store # Pastikan ini sesuai dengan nama repositori Anda
   branch: main
-  client_id: Ov23liAfQyI9r84TZfOE # Client ID Anda
+  client_id: Ov23limBtBue8r4aNq5M # Client ID Anda
   # HAPUS BARIS 'base_url' DAN 'auth_url'
 
 media_folder: "assets/images"
