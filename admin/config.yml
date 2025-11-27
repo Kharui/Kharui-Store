@@ -3,14 +3,15 @@ backend:
   repo: Kharui/Kharui-Store 
   branch: main
   client_id: Ov23liAfQyI9r84TZfOE 
-  # Tambahkan baris ini untuk memaksa alur otentikasi OAuth murni:
-  auth_type: implicit
-  # Tambahkan baris ini (meskipun opsional, ini membantu mengarahkan Decap CMS)
-  base_url: https://kharui-store.pages.dev 
-
+  
+  # KUNCI SOLUSI: Tentukan URL Callback secara eksplisit
+  base_url: https://api.github.com
+  auth_url: https://kharui-store.pages.dev/auth/ # Ganti auth_type implicit
+  
 media_folder: "assets/images"
 public_folder: "/assets/images"
 
+# ... (sisanya sama)
 collections:
   - name: 'games' 
     label: 'Katalog Game'
