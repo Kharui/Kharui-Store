@@ -1,8 +1,8 @@
 backend:
   name: github
-  repo: Kharui/Kharui-Store # PASTIKAN NAMA REPOSITORI ANDA BENAR
+  repo: Kharui/Kharui-Store # PASTIKAN INI SESUAI NAMA REPOSITORI ANDA
   branch: main
-  client_id: [TEMPELKAN_CLIENT_ID_ANDA_DISINI] # KODE YANG DIDAPAT DARI GITHUB OAUTH
+  client_id: Ov23liAfQyI9r84TZfOE # <--- CLIENT ID ANDA SUDAH TERISI!
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
@@ -25,7 +25,7 @@ collections:
                 widget: "string"
                 required: true
               
-              # --- KOREKSI FIELD UKURAN (Menghilangkan Tanggal Rilis dan ID) ---
+              # --- FIX: FIELD UKURAN BARU ---
               - label: "Ukuran Full Version (GB)"
                 name: "size_full"
                 widget: "number"
