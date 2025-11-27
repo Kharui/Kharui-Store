@@ -1,8 +1,12 @@
 backend:
   name: github
-  repo: Kharui/Kharui-Store # PASTIKAN INI SESUAI NAMA REPOSITORI ANDA
+  repo: Kharui/Kharui-Store 
   branch: main
-  client_id: Ov23liAfQyI9r84TZfOE # <--- CLIENT ID ANDA SUDAH TERISI!
+  client_id: Ov23liAfQyI9r84TZfOE 
+  # Tambahkan baris ini untuk memaksa alur otentikasi OAuth murni:
+  auth_type: implicit
+  # Tambahkan baris ini (meskipun opsional, ini membantu mengarahkan Decap CMS)
+  base_url: https://kharui-store.pages.dev 
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
@@ -25,7 +29,6 @@ collections:
                 widget: "string"
                 required: true
               
-              # --- FIX: FIELD UKURAN BARU ---
               - label: "Ukuran Full Version (GB)"
                 name: "size_full"
                 widget: "number"
